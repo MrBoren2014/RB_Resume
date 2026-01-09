@@ -1,0 +1,7 @@
+{
+  "name": "Reese Boren - AI Systems Engineer",
+  "description": "Interactive portfolio and resume for Reese Boren, featuring production-grade AI and Full-Stack systems expertise.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
