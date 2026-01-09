@@ -4,32 +4,29 @@ import { EXPERIENCE, EDUCATION } from '../constants';
 
 const Experience: React.FC = () => {
   return (
-    <div className="space-y-40">
-      <div className="space-y-24">
+    <div className="space-y-32">
+      <div className="space-y-16">
         {EXPERIENCE.map((job, idx) => (
-          <div key={idx} className="relative group bg-neutral-900/40 p-12 border-l-[16px] border-white shadow-[20px_20px_0px_rgba(0,0,0,0.5)]">
-            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-12">
-              <div className="space-y-4">
-                <span className="text-[14px] font-black text-emerald-400 uppercase tracking-[0.5em] block">
-                  [{job.period}]
+          <div key={idx} className="relative group bg-neutral-900/60 p-8 lg:p-10 border-l-4 border-emerald-500">
+            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-8">
+              <div className="space-y-3">
+                <span className="text-sm font-semibold text-emerald-400 uppercase tracking-wider block">
+                  {job.period}
                 </span>
-                <h3 className="text-5xl sm:text-6xl font-black text-white uppercase tracking-tighter leading-none">
+                <h3 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
                   {job.role}
                 </h3>
-                <div className="inline-block px-6 py-2 bg-white text-black text-[14px] font-black uppercase tracking-widest shadow-[8px_8px_0px_rgba(255,255,255,0.2)]">
-                  LOG_ID: {job.company.split(' ')[0]}
-                </div>
-                <p className="text-white text-xl font-bold uppercase tracking-widest opacity-60">
+                <p className="text-white/70 text-lg font-medium">
                   {job.company}
                 </p>
               </div>
             </div>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t-2 border-white/20 pt-10">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/20 pt-8">
               {job.highlights.map((point, i) => (
-                <li key={i} className="text-base uppercase font-black text-white leading-tight flex gap-4 items-start group-hover:text-emerald-300 transition-colors">
-                  <span className="text-white bg-white/10 px-2 py-0.5 text-xs">#0{i+1}</span>
-                  {point}
+                <li key={i} className="text-base text-white/90 leading-relaxed flex gap-3 items-start">
+                  <span className="text-emerald-400 font-bold text-sm mt-1">0{i+1}</span>
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
@@ -37,28 +34,27 @@ const Experience: React.FC = () => {
         ))}
       </div>
 
-      <div className="pt-32 border-t-[12px] border-white">
-        <h2 className="text-6xl font-black tracking-tighter uppercase mb-20 italic bg-white text-black inline-block px-8 py-2">
-          ACADEMIC_REGISTRY
+      <div className="pt-16 border-t-2 border-white/20">
+        <h2 className="text-4xl font-bold tracking-tight mb-12 text-white">
+          Education
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {EDUCATION.map((edu, idx) => (
-            <div key={idx} className="bg-white p-12 border-8 border-black text-black shadow-[15px_15px_0px_rgba(255,255,255,0.1)] hover:translate-x-4 transition-transform">
-              <div className="flex justify-between items-start mb-8 border-b-4 border-black pb-4">
-                <h4 className="text-3xl font-black uppercase leading-[0.9] max-w-[70%]">
+            <div key={idx} className="bg-white p-8 text-black">
+              <div className="flex justify-between items-start mb-4 border-b-2 border-black/20 pb-4">
+                <h4 className="text-xl font-bold leading-snug max-w-[70%]">
                   {edu.degree}
                 </h4>
-                <span className="text-[14px] font-black bg-black text-white px-4 py-2">
-                  CLASS_{edu.year}
+                <span className="text-sm font-bold bg-black text-white px-3 py-1">
+                  {edu.year}
                 </span>
               </div>
-              <p className="text-black text-[14px] font-black uppercase mb-8 tracking-[0.2em] opacity-80 italic">
+              <p className="text-black/70 text-base font-medium mb-4">
                 {edu.school}
               </p>
               {edu.gpa && (
-                <div className="flex items-center gap-6 bg-black text-white p-4">
-                  <div className="h-4 bg-emerald-500 w-24"></div>
-                  <span className="text-[18px] font-black">GPA_METRIC: {edu.gpa}</span>
+                <div className="flex items-center gap-4 bg-emerald-500 text-white p-3">
+                  <span className="text-base font-bold">GPA: {edu.gpa}</span>
                 </div>
               )}
             </div>

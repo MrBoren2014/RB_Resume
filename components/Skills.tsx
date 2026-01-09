@@ -4,21 +4,21 @@ import { SKILLS } from '../constants';
 
 const Skills: React.FC = () => {
   return (
-    <div className="space-y-12">
+    <div className="space-y-8">
       {SKILLS.map((category) => (
-        <div key={category.name} className="bg-neutral-900/40 p-6 border-b-4 border-neutral-800 hover:border-white transition-colors">
-          <h4 className="text-[12px] font-black text-white uppercase tracking-[0.5em] mb-6 flex items-center gap-4">
+        <div key={category.name} className="bg-neutral-900/60 p-6 border-l-2 border-emerald-500">
+          <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-3">
             {category.name}
-            <div className="h-[2px] bg-neutral-800 flex-grow"></div>
+            <div className="h-px bg-white/20 flex-grow"></div>
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {category.skills.map((skill) => (
-              <div 
-                key={skill} 
-                className="px-4 py-3 border-2 border-neutral-800 text-[12px] font-black text-white uppercase flex items-center justify-between group hover:bg-white hover:text-black transition-all cursor-default"
+              <div
+                key={skill}
+                className="px-3 py-2 border border-neutral-700 text-sm font-medium text-white/90 flex items-center justify-between hover:bg-emerald-500/20 hover:border-emerald-500 transition-all"
               >
                 <span>{skill}</span>
-                <div className="w-2 h-2 bg-neutral-700 group-hover:bg-black"></div>
+                <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
               </div>
             ))}
           </div>
