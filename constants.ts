@@ -77,7 +77,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     company: "SYSTALOG.AI (Systems Logic & Automation Group LLC)",
     role: "Founder & Lead Software Engineer",
-    period: "2024 - Present",
+    period: "2025 - Present",
     highlights: [
       "Architected production multi-tenant SaaS platform with React 19 and Next.js 16",
       "Enforced multi-tier isolation using 25+ Row-Level Security policies at the database layer",
