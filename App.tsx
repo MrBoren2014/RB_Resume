@@ -11,47 +11,35 @@ import { PROJECTS, ARCHIVE_PROJECTS, PERSONAL_INFO } from './constants';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen selection:bg-white selection:text-black">
+    <div className="min-h-screen selection:bg-emerald-500 selection:text-white">
       <Header />
-      
-      <main className="max-w-7xl mx-auto px-8 pt-20 pb-40 space-y-48">
+
+      <main className="max-w-7xl mx-auto px-6 pt-20 pb-32 space-y-32">
         <Hero />
-        
-        <section id="interactive" className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+        <section id="interactive" className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3 flex flex-col">
-            <div className="mb-8 flex items-center gap-6">
-              <h2 className="text-3xl font-black uppercase tracking-tighter bg-white text-black px-4">SYSTEM_SHELL</h2>
-              <div className="h-[2px] bg-white/20 flex-grow"></div>
-            </div>
+            <h2 className="text-2xl font-bold text-white mb-6">Interactive Terminal</h2>
             <Terminal />
           </div>
           <div className="lg:col-span-2 flex flex-col">
-            <div className="mb-8 flex items-center gap-6">
-              <h2 className="text-3xl font-black uppercase tracking-tighter bg-white text-black px-4">KNOWLEDGE_SIM</h2>
-              <div className="h-[2px] bg-white/20 flex-grow"></div>
-            </div>
+            <h2 className="text-2xl font-bold text-white mb-6">Ask Me Anything</h2>
             <AIAsk />
           </div>
         </section>
 
-        <section id="projects" className="space-y-16 scroll-mt-32">
-          <div className="flex items-center gap-6">
-            <h2 className="text-6xl font-black tracking-tighter uppercase italic bg-white text-black px-8 py-2 glitch" data-text="FLAGSHIP_SYSTEM">FLAGSHIP_SYSTEM</h2>
-            <div className="h-[4px] bg-white flex-grow"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-12">
+        <section id="projects" className="space-y-12 scroll-mt-32">
+          <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
+
+          <div className="space-y-8">
             {PROJECTS.map((p, idx) => (
               <ProjectHighlight key={idx} project={p} />
             ))}
           </div>
 
-          <div className="pt-24 space-y-12">
-            <div className="flex items-center gap-6">
-              <h3 className="text-4xl font-black tracking-tighter uppercase text-white/40">PROJECT_ARCHIVES</h3>
-              <div className="h-[1px] bg-white/20 flex-grow"></div>
-            </div>
-            <div className="grid grid-cols-1 gap-8 opacity-70 hover:opacity-100 transition-opacity">
+          <div className="pt-12 space-y-8">
+            <h3 className="text-2xl font-bold text-white/60">Archived Projects</h3>
+            <div className="space-y-6">
               {ARCHIVE_PROJECTS.map((p, idx) => (
                 <ProjectHighlight key={idx} project={p} isArchive={true} />
               ))}
@@ -59,31 +47,34 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-32">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-16">
           <section id="skills" className="xl:col-span-1">
-            <div className="sticky top-40">
-              <h2 className="text-4xl font-black uppercase tracking-tighter mb-16 bg-white text-black px-6 py-2 inline-block">REGISTRY_STACK</h2>
+            <div className="sticky top-24">
+              <h2 className="text-2xl font-bold text-white mb-8">Skills</h2>
               <Skills />
             </div>
           </section>
 
           <section id="experience" className="xl:col-span-2 scroll-mt-32">
-            <h2 className="text-4xl font-black uppercase tracking-tighter mb-16 bg-white text-black px-6 py-2 inline-block">ENGINEERING_LOGS</h2>
+            <h2 className="text-4xl font-bold text-white mb-12">Experience</h2>
             <Experience />
           </section>
         </div>
       </main>
 
-      <footer className="border-t-[12px] border-white bg-black py-32 mt-40">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+      <footer className="border-t border-white/20 bg-neutral-950 py-16">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
-            <p className="text-[14px] font-black uppercase tracking-[0.8em] text-white">REESE_BOREN // SYSTEM_TERMINAL</p>
-            <p className="text-xs text-neutral-600 mt-4 tracking-widest font-black uppercase">Build_Hash: RB_PROD_2024_04_FINAL</p>
+            <p className="text-lg font-bold text-white">Reese Boren</p>
+            <p className="text-sm text-neutral-500 mt-1">AI Systems Engineer</p>
           </div>
-          <div className="flex gap-16">
-            <a href={`mailto:${PERSONAL_INFO.email}`} className="text-[14px] font-black uppercase tracking-widest text-white hover:text-emerald-400 transition-colors border-b-2 border-white">Email_Channel</a>
-            <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="text-[14px] font-black uppercase tracking-widest text-white hover:text-emerald-400 transition-colors border-b-2 border-white">Net_LinkedIn</a>
-            <span className="text-[14px] font-black uppercase tracking-widest text-white/30 cursor-not-allowed">Source_Private</span>
+          <div className="flex gap-8">
+            <a href={`mailto:${PERSONAL_INFO.email}`} className="text-sm font-medium text-white hover:text-emerald-400 transition-colors">
+              Email
+            </a>
+            <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-emerald-400 transition-colors">
+              LinkedIn
+            </a>
           </div>
         </div>
       </footer>
