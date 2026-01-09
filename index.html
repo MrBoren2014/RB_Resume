@@ -4,71 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REESE BOREN | SYSTEMS_ENGINEER</title>
+    <title>Reese Boren | AI Systems Engineer</title>
+    <meta name="description" content="AI Systems Engineer & Founder of Systalog.ai. Full-stack developer specializing in React, Next.js, PostgreSQL, and machine learning.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pixel-size: 2px;
-            --bg-color: #050505;
+            --bg-color: #0a0a0a;
             --text-primary: #ffffff;
-            --accent: #10b981; /* Emerald */
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.4);
         }
+
+        * { scroll-behavior: smooth; }
+
         body {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             overflow-x: hidden;
         }
-        /* Pixel Grid Background */
-        .pixel-bg {
-            background-image: 
-                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 32px 32px;
+
+        code, .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Gradient background */
+        .gradient-bg {
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.15), transparent);
         }
-        /* CRT Scanlines - subtle for readability */
-        .scanlines::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.06) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.008), rgba(0, 0, 255, 0.015));
-            z-index: 100;
-            background-size: 100% 3px, 3px 100%;
-            pointer-events: none;
+
+        /* Subtle grid */
+        .grid-bg {
+            background-image:
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
-        /* Glitch Effect */
-        .glitch {
+
+        /* Glow effects */
+        .glow-text {
+            text-shadow: 0 0 40px var(--accent-glow);
+        }
+
+        .glow-border {
+            box-shadow: 0 0 20px -5px var(--accent-glow);
+        }
+
+        .glow-border:hover {
+            box-shadow: 0 0 30px -5px var(--accent-glow);
+        }
+
+        /* Animated gradient border */
+        .gradient-border {
             position: relative;
-            display: inline-block;
+            background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+                        linear-gradient(135deg, var(--accent), #3b82f6, var(--accent)) border-box;
+            border: 2px solid transparent;
         }
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            left: 2px;
-            text-shadow: -1px 0 #ff00c1;
-            top: 0;
+
+        /* Fade in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+        /* Pulse animation for status indicator */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+
+        /* Hover lift effect */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent);
             color: white;
-            background: black;
-            overflow: hidden;
-            clip: rect(0, 900px, 0, 0);
-            animation: noise-anim 2s infinite linear alternate-reverse;
         }
-        @keyframes noise-anim {
-            0% { clip: rect(44px, 9999px, 56px, 0); }
-            20% { clip: rect(12px, 9999px, 20px, 0); }
-            100% { clip: rect(89px, 9999px, 92px, 0); }
-        }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #333; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--accent); }
     </style>
 </head>
-<body class="custom-scrollbar scanlines pixel-bg">
+<body class="gradient-bg grid-bg">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

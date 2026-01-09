@@ -4,46 +4,85 @@ import { PERSONAL_INFO } from '../constants';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative py-20 lg:py-32">
-      <div className="max-w-6xl mx-auto text-center space-y-10">
-        <div className="inline-block px-5 py-2 border-2 border-white text-sm font-bold uppercase tracking-wider mb-4 bg-white text-black">
-          STATUS: OPERATIONAL // FOUNDER_SYSTALOG.AI
+    <section className="relative py-24 lg:py-40">
+      <div className="max-w-5xl mx-auto text-center space-y-8">
+        {/* Status badge */}
+        <div className="animate-fade-in animate-delay-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+          <span className="w-2 h-2 bg-emerald-500 rounded-full pulse-glow"></span>
+          <span className="text-sm font-medium text-emerald-400">Available for opportunities</span>
         </div>
 
-        <h1
-          className="text-6xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none text-white glitch"
-          data-text="REESE BOREN"
-        >
-          REESE BOREN
+        {/* Name */}
+        <h1 className="animate-fade-in animate-delay-2 text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none">
+          <span className="text-white">Reese </span>
+          <span className="text-emerald-400 glow-text">Boren</span>
         </h1>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-base font-bold uppercase tracking-wide text-white">
-          <span className="bg-neutral-900 border border-white/30 px-4 py-2">AI Systems Engineer</span>
-          <span className="hidden md:block text-white/50">|</span>
-          <span className="bg-neutral-900 border border-white/30 px-4 py-2">Full-Stack Architect</span>
-          <span className="hidden md:block text-white/50">|</span>
-          <span className="bg-emerald-600 text-white px-4 py-2">Founder @ Systalog.ai</span>
+        {/* Title pills */}
+        <div className="animate-fade-in animate-delay-3 flex flex-wrap items-center justify-center gap-3">
+          <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 font-medium">
+            AI Systems Engineer
+          </span>
+          <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 font-medium">
+            Full-Stack Architect
+          </span>
+          <span className="px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-semibold">
+            Founder @ Systalog.ai
+          </span>
         </div>
 
-        <p className="text-lg sm:text-xl text-white/90 max-w-4xl mx-auto font-medium leading-relaxed border-l-4 border-emerald-500 pl-6 py-4 text-left bg-neutral-900/80">
+        {/* Summary */}
+        <p className="animate-fade-in animate-delay-4 text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
           {PERSONAL_INFO.summary}
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6 pt-8">
+        {/* CTA buttons */}
+        <div className="animate-fade-in animate-delay-4 flex flex-wrap justify-center gap-4 pt-6">
           <a
             href="https://systalog.ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 bg-white text-black font-bold uppercase tracking-wide text-lg hover:bg-emerald-500 hover:text-white transition-all shadow-lg"
+            className="group px-8 py-4 bg-emerald-500 text-white font-semibold rounded-lg hover:bg-emerald-400 transition-all hover-lift glow-border"
           >
-            Explore Systalog.ai
+            <span className="flex items-center gap-2">
+              Explore Systalog.ai
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
           </a>
           <a
             href="#experience"
-            className="px-10 py-4 border-2 border-white text-white font-bold uppercase tracking-wide text-lg hover:bg-white hover:text-black transition-all"
+            className="px-8 py-4 bg-white/5 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white/30 transition-all"
           >
             View Experience
           </a>
+          <a
+            href={`mailto:${PERSONAL_INFO.email}`}
+            className="px-8 py-4 bg-transparent border border-emerald-500/50 text-emerald-400 font-semibold rounded-lg hover:bg-emerald-500/10 transition-all"
+          >
+            Get in Touch
+          </a>
+        </div>
+
+        {/* Quick stats */}
+        <div className="animate-fade-in animate-delay-4 pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white">6+</div>
+            <div className="text-sm text-white/50">Years USAF</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white">25+</div>
+            <div className="text-sm text-white/50">RLS Policies</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white">3,000+</div>
+            <div className="text-sm text-white/50">Pilots Managed</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-emerald-400">M.S.</div>
+            <div className="text-sm text-white/50">AI in Progress</div>
+          </div>
         </div>
       </div>
     </section>

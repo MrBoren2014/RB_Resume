@@ -68,9 +68,9 @@ export const ARCHIVE_PROJECTS: ProjectDetail[] = [
 
 export const SKILLS: SkillCategory[] = [
   { name: "Languages & Frameworks", skills: ["TypeScript", "Python", "SQL", "React 19", "Next.js 16", "FastAPI", "Tailwind 4"] },
-  { name: "ML & NLP", skills: ["PyTorch", "Transformers (BERT, RoBERTa, GPT-2)", "scikit-learn", "Ollama", "OCR Parsing"] },
-  { name: "Security & Backend", skills: ["RLS Policies", "RBAC", "HSTS", "CSP", "PostgreSQL", "Supabase", "Node.js"] },
-  { name: "Data & Infrastructure", skills: ["AWS EC2/S3", "Docker", "Vercel", "Tableau", "pandas", "Git"] }
+  { name: "AI & ML", skills: ["Claude Code", "PyTorch", "Transformers", "scikit-learn", "Ollama", "LLM Integration"] },
+  { name: "Security & Backend", skills: ["RLS Policies", "RBAC", "HSTS", "CSP", "PostgreSQL", "Supabase"] },
+  { name: "DevOps & Tools", skills: ["AWS EC2/S3", "Docker", "Vercel", "Git", "CI/CD", "GitHub Actions"] }
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
@@ -111,6 +111,6 @@ export const EXPERIENCE: ExperienceItem[] = [
 
 export const EDUCATION: EducationItem[] = [
   { degree: "M.S. Artificial Intelligence", school: "City University of Seattle", year: "Expected 2026" },
-  { degree: "M.S. IT Admin Management (Cyber)", school: "Central Washington University", year: "2023", gpa: "3.9" },
+  { degree: "M.S. IT Administration & Cybersecurity", school: "Central Washington University", year: "2023", gpa: "3.9" },
   { degree: "B.S. IT Management", school: "American Military University", year: "2022", gpa: "3.7" }
 ];
