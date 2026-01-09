@@ -4,22 +4,24 @@ import { SKILLS } from '../constants';
 
 const Skills: React.FC = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {SKILLS.map((category) => (
-        <div key={category.name} className="bg-neutral-900/60 p-6 border-l-2 border-emerald-500">
-          <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-3">
+        <div key={category.name} className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
+          <h4 className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-4">
             {category.name}
-            <div className="h-px bg-white/20 flex-grow"></div>
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="flex flex-wrap gap-2">
             {category.skills.map((skill) => (
-              <div
+              <span
                 key={skill}
-                className="px-3 py-2 border border-neutral-700 text-sm font-medium text-white/90 flex items-center justify-between hover:bg-emerald-500/20 hover:border-emerald-500 transition-all"
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all cursor-default
+                  ${skill === 'Claude Code'
+                    ? 'bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/40 text-emerald-300 hover:border-emerald-400'
+                    : 'bg-white/5 border border-white/10 text-white/80 hover:bg-white/10 hover:border-white/20'
+                  }`}
               >
-                <span>{skill}</span>
-                <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
-              </div>
+                {skill}
+              </span>
             ))}
           </div>
         </div>
