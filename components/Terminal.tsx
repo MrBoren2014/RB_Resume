@@ -42,7 +42,7 @@ const Terminal: React.FC = () => {
         response = 'TS/JS, Python, SQL. React 19, Next.js 16, PostgreSQL, PyTorch, Transformers, Radix UI.';
         break;
       case 'contact':
-        response = 'Email: Reese.Boren@hotmail.com | Phone: 254-431-1175';
+        response = 'Email: Reese.Boren@hotmail.com | LinkedIn: linkedin.com/in/michael-boren-b63a65234';
         break;
       case 'whoami':
         response = 'root@systalog-node:~$ user="Reese Boren" status="Founder" mode="Shipping"';
