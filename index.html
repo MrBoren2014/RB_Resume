@@ -7,117 +7,83 @@
     <title>Reese Boren | AI Systems Engineer</title>
     <meta name="description" content="AI Systems Engineer & Founder of Systalog.ai. Full-stack developer specializing in React, Next.js, PostgreSQL, and machine learning.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0a0a0a',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0a0a0a;
-            --text-primary: #ffffff;
-            --accent: #10b981;
-            --accent-glow: rgba(16, 185, 129, 0.4);
-        }
-
         * { scroll-behavior: smooth; }
 
-        body {
+        html, body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: #0a0a0a !important;
+            color: #ffffff;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         code, .mono { font-family: 'JetBrains Mono', monospace; }
 
-        /* Gradient background */
-        .gradient-bg {
-            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.15), transparent);
-        }
-
-        /* Subtle grid */
-        .grid-bg {
-            background-image:
-                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
         /* Glow effects */
         .glow-text {
-            text-shadow: 0 0 40px var(--accent-glow);
+            text-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
         }
 
         .glow-border {
-            box-shadow: 0 0 20px -5px var(--accent-glow);
-        }
-
-        .glow-border:hover {
-            box-shadow: 0 0 30px -5px var(--accent-glow);
+            box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.4);
         }
 
         /* Animated gradient border */
         .gradient-border {
-            position: relative;
-            background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-                        linear-gradient(135deg, var(--accent), #3b82f6, var(--accent)) border-box;
+            background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+                        linear-gradient(135deg, #10b981, #3b82f6, #10b981) border-box;
             border: 2px solid transparent;
         }
 
         /* Fade in animation */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate-fade-in {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
+        .animate-fade-in { animation: fadeInUp 0.6s ease-out forwards; }
         .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
         .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
         .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
         .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
 
-        /* Pulse animation for status indicator */
+        /* Pulse animation */
         @keyframes pulse-glow {
             0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
             50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
         }
-
-        .pulse-glow {
-            animation: pulse-glow 2s infinite;
-        }
+        .pulse-glow { animation: pulse-glow 2s infinite; }
 
         /* Hover lift effect */
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5); }
 
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Custom scrollbar */
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #111; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+        ::-webkit-scrollbar-thumb:hover { background: #10b981; }
 
-        /* Selection */
-        ::selection {
-            background: var(--accent);
-            color: white;
-        }
+        ::selection { background: #10b981; color: white; }
     </style>
 </head>
-<body class="gradient-bg grid-bg">
+<body class="bg-[#0a0a0a] min-h-screen">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>
