@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const [showArchived, setShowArchived] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Header />
 
       <main className="max-w-6xl mx-auto px-6 pt-24 pb-32 space-y-32">

@@ -7,19 +7,19 @@ const Hero: React.FC = () => {
     <section className="relative py-24 lg:py-40">
       <div className="max-w-5xl mx-auto text-center space-y-8">
         {/* Status badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-          <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 animate-in">
+          <span className="w-2 h-2 bg-emerald-500 rounded-full pulse-dot"></span>
           <span className="text-sm font-medium text-emerald-400">Available for opportunities</span>
         </div>
 
         {/* Name */}
-        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none">
+        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none animate-in delay-1">
           <span className="text-white">Reese </span>
           <span className="text-emerald-400 glow-text">Boren</span>
         </h1>
 
         {/* Title pills */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3 animate-in delay-2">
           <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 font-medium">
             AI Systems Engineer
           </span>
