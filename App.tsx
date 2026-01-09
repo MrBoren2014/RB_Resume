@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
@@ -10,6 +10,8 @@ import Terminal from './components/Terminal';
 import { PROJECTS, ARCHIVE_PROJECTS, PERSONAL_INFO } from './constants';
 
 const App: React.FC = () => {
+  const [showArchived, setShowArchived] = useState(false);
+
   return (
     <div className="min-h-screen selection:bg-emerald-500 selection:text-white">
       <Header />
@@ -37,13 +39,23 @@ const App: React.FC = () => {
             ))}
           </div>
 
-          <div className="pt-12 space-y-8">
-            <h3 className="text-2xl font-bold text-white/60">Archived Projects</h3>
-            <div className="space-y-6">
-              {ARCHIVE_PROJECTS.map((p, idx) => (
-                <ProjectHighlight key={idx} project={p} isArchive={true} />
-              ))}
-            </div>
+          <div className="pt-8">
+            <button
+              onClick={() => setShowArchived(!showArchived)}
+              className="flex items-center gap-3 text-neutral-400 hover:text-white transition-colors group"
+            >
+              <span className="text-lg font-medium">
+                {showArchived ? '− Hide' : '+ Show'} Archived Projects ({ARCHIVE_PROJECTS.length})
+              </span>
+            </button>
+
+            {showArchived && (
+              <div className="mt-8 space-y-6">
+                {ARCHIVE_PROJECTS.map((p, idx) => (
+                  <ProjectHighlight key={idx} project={p} isArchive={true} />
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
