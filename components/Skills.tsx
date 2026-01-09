@@ -4,20 +4,21 @@ import { SKILLS } from '../constants';
 
 const Skills: React.FC = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {SKILLS.map((category) => (
-        <div key={category.name} className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
-          <h4 className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-4">
-            {category.name}
+        <div key={category.name} className="p-4 bg-neutral-900/50 border-2 border-neutral-700 hover:border-emerald-500/50 transition-colors">
+          <h4 className="text-xs mono text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+            <span className="text-white/50">&gt;</span>
+            {category.name.replace(/ /g, '_')}
           </h4>
           <div className="flex flex-wrap gap-2">
             {category.skills.map((skill) => (
               <span
                 key={skill}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all cursor-default
+                className={`px-3 py-1 text-xs mono transition-all cursor-default
                   ${skill === 'Claude Code'
-                    ? 'bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/40 text-emerald-300 hover:border-emerald-400'
-                    : 'bg-white/5 border border-white/10 text-white/80 hover:bg-white/10 hover:border-white/20'
+                    ? 'bg-emerald-500/20 border-2 border-emerald-500 text-emerald-300 hover:bg-emerald-500/30'
+                    : 'bg-neutral-800 border border-neutral-600 text-white/80 hover:border-emerald-500/50 hover:text-emerald-400'
                   }`}
               >
                 {skill}
