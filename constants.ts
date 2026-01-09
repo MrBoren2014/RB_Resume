@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   location: "Washington State",
   email: "Reese.Boren@hotmail.com",
   linkedin: "https://www.linkedin.com/in/michael-boren-b63a65234/",
-  summary: "Full-Stack AI Engineer building production-grade systems. Founder of Systalog.ai (Systems Logic & Automation Group LLC)—a multi-tenant B2B platform with database-level security (25+ RLS policies), dual-portal architecture, and enterprise authentication. Expert in TypeScript, React, Next.js, PostgreSQL, and machine learning frameworks. CLI-first developer. Air Force veteran. M.S. in Artificial Intelligence in progress.",
+  summary: "Full-Stack AI Engineer building production-grade systems. Founder of Systalog.ai (Systems Logic & Automation Group LLC), a multi-tenant B2B platform with database-level security (25+ RLS policies), dual-portal architecture, and enterprise authentication. Expert in TypeScript, React, Next.js, PostgreSQL, and machine learning frameworks. CLI-first developer. Air Force veteran. M.S. in Artificial Intelligence in progress.",
 };
 
 export const PROJECTS: ProjectDetail[] = [
